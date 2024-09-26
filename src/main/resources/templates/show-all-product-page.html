@@ -1,0 +1,33 @@
+<hmtl xmlns:th="http://www.thymeleaf.org">
+	
+	
+	<body>
+		<p> All products: </p>
+		<table border 1>
+		<table>
+			
+			<tr>
+				<tr>ID</tr>
+				<tr>Title</tr>
+				<tr>Description</tr>
+				<tr>Price</tr>
+				<tr>Quantity</tr>
+			</tr>
+			
+			
+			<tr th:each = "temp: ${mypackage} ">
+				<td th:text="${temp.getId()}"></td>
+				<td th:text="${temp.getTitle()}"></td>
+				<td th:text="${temp.getDescription()}"></td>
+				<td th:text="${temp.getPrice()}"></td>
+				<td th:text="${temp.getQuantity()}"></td>
+			</tr>
+			
+		</table>
+		</table>
+		
+		
+		
+	
+	</body>
+</html>
