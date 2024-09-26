@@ -19,6 +19,10 @@ public interface IproductCRUDService {
 	
 	//delete
 	public abstract void deleteById(int id) throws Exception;
+
+	double findMinPrice();
+	
+	double findMaxPrice();
 	
 	
 }

@@ -9,5 +9,8 @@ public interface IProductFilteringService {
 	
 	public abstract ArrayList<Product> filterByPriceBetween(float minPrice, float maxPrice) throws Exception;
 	
+	double findMinPrice();
+	
+    double findMaxPrice();
 
 }

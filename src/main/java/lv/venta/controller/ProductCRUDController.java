@@ -144,5 +144,18 @@ public class ProductCRUDController {
 			return "error-page";
 		}
 	}
+	@GetMapping("/min-price") //localhost:8080/product/crud/min-price
+    public String getMinPrice(Model model) {
+        double minPrice = productCRUDservice.findMinPrice();
+        model.addAttribute("minPrice", minPrice);
+        return "show-min-price-page";
+    }
+
+    @GetMapping("/max-price") //localhost:8080/product/crud/max-price
+    public String getMaxPrice(Model model) {
+        double maxPrice = productCRUDservice.findMaxPrice();
+        model.addAttribute("maxPrice", maxPrice);
+        return "show-max-price-page";
+    }
 
 }

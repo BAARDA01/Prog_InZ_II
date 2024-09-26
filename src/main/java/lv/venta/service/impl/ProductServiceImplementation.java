@@ -89,4 +89,24 @@ public class ProductServiceImplementation implements IproductCRUDService, IProdu
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	@Override
+	
+    public double findMinPrice() {
+		ArrayList<Product> products = (ArrayList<Product>) productRepo.findAll();
+        return products.stream()
+                       .mapToDouble(Product::getPrice)
+                       .min()
+                       .orElse(0.0);
+    }
+
+    @Override
+    public double findMaxPrice() {
+    	ArrayList<Product> products = (ArrayList<Product>) productRepo.findAll();
+        return products.stream()
+                       .mapToDouble(Product::getPrice)
+                       .max()
+                       .orElse(0.0);
+    }
+	
 }
